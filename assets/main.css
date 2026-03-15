@@ -1,0 +1,426 @@
+/* =========================================================
+   Root Variables
+========================================================= */
+:root {
+  --bg: #fbfdff;
+  --card: #ffffff;
+  --muted: #6b7280;
+  --accent: #0b74de;
+  --accent-weak: #e6f0fb;
+  --text: #0f1724;
+
+  --gap: 14px;
+  --max-width: 980px;
+  --container-padding: 20px;
+}
+
+/* =========================================================
+   Base / Global
+========================================================= */
+html,
+body {
+  height: 100%;
+  margin: 0;
+
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  font-size: 15px;
+  line-height: 1.45;
+
+  background: linear-gradient(180deg, var(--bg), #f7fbff 60%);
+  color: var(--text);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 28px;
+  box-sizing: border-box;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* =========================================================
+   Containers
+========================================================= */
+.container {
+  max-width: 450px;
+  margin: auto;
+  padding: 20px;
+
+  background: #fff;
+  border: 1px solid #ccc;
+}
+
+.container:not(#test) {
+  width: 100%;
+  max-width: var(--max-width);
+  padding: var(--container-padding);
+  margin: 0 auto;
+
+  background: #fff;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+
+  box-sizing: border-box;
+}
+
+.container:not(#test) > h1 {
+  margin: 0;
+
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: -0.2px;
+  text-align: center;
+
+  color: var(--text);
+}
+
+/* =========================================================
+   App Layout
+========================================================= */
+.app-layout {
+  display: flex;
+  align-items: flex-start;
+  gap: 24px;
+}
+
+.main-container {
+  flex: 1 1 auto;
+  min-width: 520px;
+}
+
+.search-container {
+  flex: 0 0 360px;
+  height: 510px;
+}
+
+/* =========================================================
+   Label Display
+========================================================= */
+.label-display {
+  border: 2px solid #000;
+
+  width: 100%;
+  margin-top: 18px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+#labelDisplay {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.label {
+  position: relative;
+
+  width: 380px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-family: Arial, sans-serif;
+  font-size: 12px;
+
+  border: 1px solid #000;
+  background: #fff;
+}
+
+.ze-initial {
+  position: absolute;
+  left: 6px;
+  bottom: 6px;
+
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 1px;
+
+  opacity: 0.5;
+  user-select: none;
+}
+
+/* =========================================================
+   Label Sections
+========================================================= */
+.left-section,
+.right-section {
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+}
+
+.left-section {
+  width: 31%;
+}
+
+.right-section {
+  width: 25%;
+  height: 100%;
+
+  background: #000;
+  color: #fff;
+  font-size: 12px;
+}
+
+.row,
+.cell {
+  padding: 5px;
+  text-align: center;
+}
+
+.table-row {
+  display: flex;
+}
+
+.cell {
+  flex: 1;
+}
+
+/* =========================================================
+   Search
+========================================================= */
+.search-results {
+  max-height: 70vh;
+  overflow: auto;
+  padding-right: 4px;
+}
+
+.search-group {
+  width: 265px;
+  margin: 10px 0;
+  padding: 10px;
+
+  background: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  border-radius: 8px;
+}
+
+.search-group-title {
+  margin-bottom: 8px;
+
+  font-weight: 800;
+  letter-spacing: 0.2px;
+}
+
+.search-sku-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  margin: 6px 0;
+}
+
+.search-sku-meta {
+  font-size: 12px;
+  opacity: 0.8;
+}
+
+.search-sku-btn {
+  padding: 6px 10px;
+  cursor: pointer;
+}
+
+/* =========================================================
+   Forms
+========================================================= */
+.form-group {
+  width: 100%;
+  max-width: 720px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: var(--gap);
+
+  box-sizing: border-box;
+}
+
+.form-group label {
+  min-width: 160px;
+
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--muted);
+
+  text-align: left;
+}
+
+.form-group > div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+
+  gap: 10px;
+}
+
+input[type="text"],
+input[type="number"] {
+  flex: 1 1 320px;
+  min-width: 160px;
+
+  padding: 10px 12px;
+
+  font-size: 14px;
+  color: var(--text);
+
+  background: var(--card);
+  border: 1px solid #e6e9ef;
+  border-radius: 8px;
+
+  outline: none;
+
+  transition: box-shadow 0.12s ease, border-color 0.12s ease;
+}
+
+/* =========================================================
+   Buttons
+========================================================= */
+button {
+  appearance: none;
+
+  padding: 9px 14px;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  color: #fff;
+  background: var(--accent);
+
+  border: 0;
+  border-radius: 8px;
+
+  cursor: pointer;
+
+  transition: transform 0.06s ease, box-shadow 0.12s ease, opacity 0.12s ease;
+  box-shadow: 0 6px 14px rgba(11, 116, 222, 0.12);
+}
+
+.form-group > div button {
+  padding: 8px 12px;
+
+  background: transparent;
+  color: var(--accent);
+
+  border: 1px solid rgba(11, 116, 222, 0.12);
+  box-shadow: none;
+}
+
+/* =========================================================
+   File Status
+========================================================= */
+#csvFileName,
+#csvStatus {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+/* =========================================================
+   Accessibility
+========================================================= */
+button:focus,
+input:focus {
+  outline: 3px solid rgba(11, 116, 222, 0.12);
+  outline-offset: 2px;
+}
+
+/* =========================================================
+   Utilities
+========================================================= */
+.hidden {
+  display: none !important;
+}
+
+.muted {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--muted);
+}
+
+/* =========================================================
+   Media Queries
+========================================================= */
+@media (max-width: 980px) {
+  .app-layout {
+    flex-direction: column;
+  }
+
+  .search-container {
+    flex: 1 1 auto;
+    width: auto;
+  }
+
+  .main-container {
+    min-width: auto;
+  }
+}
+
+@media (max-width: 900px) {
+  :root {
+    --max-width: 720px;
+  }
+
+  .form-group {
+    max-width: 640px;
+    gap: 12px;
+  }
+
+  input[type="text"],
+  input[type="number"] {
+    flex-basis: 260px;
+  }
+}
+
+@media (max-width: 560px) {
+  body {
+    padding: 18px;
+  }
+
+  .container:not(#test) {
+    padding: 12px;
+  }
+
+  .form-group {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+  }
+
+  .form-group label {
+    width: 100%;
+    text-align: left;
+  }
+
+  .form-group > div {
+    justify-content: stretch;
+  }
+
+  button {
+    width: 100%;
+  }
+
+  .label-display {
+    padding: 8px;
+  }
+}
+
+@media print {
+  .ze-initial {
+    opacity: 0.25;
+  }
+}
