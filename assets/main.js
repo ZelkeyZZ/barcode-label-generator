@@ -513,7 +513,7 @@ function printLabel() {
   <html>
   <head>
   <title>Print Label</title>
-  <link rel="stylesheet" href="assets/label.css">
+  <link rel="stylesheet" href="assets/main.css">
   </head>
   <body onload="window.print();window.close();">
   <div id="label">${content}</div>
