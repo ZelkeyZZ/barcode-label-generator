@@ -6,17 +6,9 @@ This application features a reactive multi-pane layout separating the active lab
 
 ---
 
-## 📦 The Origin Story (Built on the Warehouse Floor)
-
-This project was born out of operational necessity during downtime in an inventory fulfillment warehouse. In logistics, shoes frequently require "reboxing" if the original manufacturer's packaging becomes water-damaged, crushed, or torn during transit. When a pair of shoes is migrated to a generic replacement box, the original barcode is lost—creating an un-scannable inventory bottleneck. 
-
-To solve this without needing clunky enterprise warehouse management software, this lightweight utility was built to let floor staff drop an inventory CSV, instantly look up the shoe style, and print a perfect-fit replacement label to slap onto the new box.
-
----
-
 ## ⚡ Technical Highlights
 
-While designed for rapid utility on the warehouse floor, the application features advanced browser API implementations and optimized programmatic architectures:
+The application features advanced browser API implementations and optimized programmatic architectures:
 
 * **Automated Live Disk Polling:** Leveraging the modern **File System Access API** (`showOpenFilePicker`), the application safely acquires a continuous file handle. It actively monitors the file's metadata (`lastModified` and `size`) via a background interval loop, automatically hot-reloading changes in real-time when the underlying CSV database is updated on disk.
 * **Algebraic EAN-13 Check Digit Calculation:** Instead of relying on pre-calculated data strings, the system dynamically concatenates a commercial corporate prefix with an 8-digit unique SKU, passing the array through an algorithmic check routine using alternating structural weights:
